@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling</title>
+    <link rel="icon" type="image/png" href="logoa.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+      <nav class="navbar">          
+      <label for="menu-toggle" id="hamburger-btn">
+      </label>
+      <ul class="links">
+        <li><a href="#info">Home</a></li>
+        <li><a href="#Types">Algorithm’s</a></li>
+        <li class="nav-link services">
+          <a href="#">Process Calculator
+              <span class="material-icons dropdown-icon"></span>
+          </a>
+          <ul class="drop-down">
+            <li><a href="fcfs.html">First-Come-First-Serve</a></li>
+            <li><a href="sjf.html">Shortest-Job-First</a></li>
+            <li><a href="srtf.html">Shortest-Remaining-Time-First</a></li>
+            <li><a href="Prio p.html">Priority (Preemptive)</a></li>
+            <li><a href="Prio np.html">Priority (Non-Preemptive)</a></li>
+            <li><a href="rr.html">Round Robin</a></li>
+          </ul>
+        <li><a href="info.html">Tutorial</a></li>
+        
+      </ul>
+    </nav>
+      </header>
+    <section class="info">
+        <div class="hero">
+            <h2>What is Process Scheduling?</h2>
+            <p>
+                Process scheduling is a crucial component of multiprogramming operating systems. 
+                It involves managing the execution of multiple processes on a system with a single central processing unit (CPU). 
+                The goal is to optimize CPU usage, minimize wait times, and ensure fairness among processes.
+            </p>
+            <div class="buttons">
+              <a href="/tutorial page/info.html" class="join">Learn More</a>
+            
+            </div>
+          </div>
+          <div class="img">
+            <img src="appointment-schedule-calendar-event-meeting-concept_53876-121132.jpg" alt="img" />
+          </div>
+
+    </section>
+</body>
+
+    <section id="Types">
+            <div class="card-list">
+                <a href="info.html#FCFS" class="card-item">
+                    <img src="FCFS.jpg" alt="Card Image">
+                    <span class="developer">First Come First Serve</span>
+                    <p>First Come First Serve (FCFS): is a basic scheduling algorithm where tasks are executed in the order of their arrival. 
+                      Simple and easy to implement, it prioritizes fairness but may lead to inefficiencies. FCFS is 
+                      commonly used in various systems and networks for its straightforward approach.</p>                 
+                </a>
+
+                <a href="info.html#SJF" class="card-item">
+                    <img src="SJF.jpg" alt="Card Image">
+                    <span class="designer">Shortest Job First</span>
+                    <p>Shortest Job First (SJF): A scheduling algorithm where the process with the smallest execution time is selected 
+                      for execution next. It minimizes the average
+                      waiting time and turnaround time, ideal for scenarios with varied task lengths.</p>                    
+                </a>
+
+                <a href="info.html#SRTF" class="card-item">
+                  <img src="srtf.webp" alt="Card Image">
+                  <span class="designer">Shortest Remaining Time First</span>
+                  <p>Shortest Remaining Time First (SRTF): A preemptive variant of SJF where the currently executing process can be
+                     interrupted if a new process with a shorter execution time arrives. It ensures minimal waiting time 
+                     by constantly prioritizing the shortest remaining task.</p>                    
+                </a>
+
+                <a href="info.html#PRIO" class="card-item">
+                  <img src="prio.webp" alt="Card Image">
+                  <span class="designer">Priority (Preemptive)</span>
+                  <p>Priority Scheduling (Preemptive): Each process is assigned a priority, and the highest
+                     priority process is executed next. Higher priority tasks can preempt lower ones.</p>                    
+                </a>
+
+                <a href="info.html#NON-PRIO" class="card-item">
+                  <img src="np priority.webp" alt="Card Image">
+                  <span class="designer">Priority (Non-Preemptive)</span>
+                  <p>Priority Scheduling (Non-Preemptive): Similar to preemptive priority scheduling but
+                    completes the currently executing task before considering others of equal or
+                    lower priority, without interruption.</p>                    
+                </a> 
+
+                <a href="info.html#RR" class="card-item">
+                  <img src="roundrobin.webp" alt="Card Image">
+                  <span class="designer">Round Robin</span>
+                  <p>Round Robin: Allocates CPU time to tasks in fixed time slices, ensuring fairness and preventing
+                     starvation, commonly used in time-sharing systems.</p>
+                </a>
+                
+            </div>
+    </section>
+
+  
+
+
+    <footer class="footer">
+      <div class="container">
+          <div class="footer-links">
+            <br> 
+            <br>
+            <br>
+              <a href="https://github.com/kimalfred/Process-Scheduling-Solver" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>           
+          </div>
+          <div class="footer-text">
+            
+              <p>&copy;2024 All Rights Reserved |</p>
+              <p>Created by Molina, Villaruel, Deocareza, Catalan, Morales</p>
+          </div>
+      </div>
+  </footer>
+  <script src="script.js"></script>
+</html>

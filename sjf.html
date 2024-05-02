@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SJF Scheduler</title>
+  <link rel="icon" type="image/png" href="/home page/logoa.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="sjf.css">
+</head>
+<body>
+
+  <nav class="navbar">          
+    <label for="menu-toggle" id="hamburger-btn">
+    </label>
+    <ul class="links">
+      <li><a href="/home page/landingpage.html">Home</a></li>
+      <li><a href="/tutorial page/info.html#SJF">Tutorial</a></li>
+      <li class="nav-link services">
+        <a href="#">Proccess Calculator
+            <span class="material-icons dropdown-icon">arrow_drop_down</span>
+        </a>
+        <ul class="drop-down">
+          <li><a href="/fcfs algo/fcfs.html">First-Come-First-Serve</a></li>
+          <li><a href="/sjf algo/sjf.html">Shortest-Job-First</a></li>
+          <li><a href="/srtf algo/srtf.html">Shortest-Remaining-Time-First</a></li>
+          <li><a href="/Prio p algo/Prio p.html">Priority (Preemptive)</a></li>
+          <li><a href="/Prio np algo/Prio np.html">Priority (Non-Preemptive)</a></li>
+          <li><a href="/rr algo/rr.html">Round Robin</a></li>
+        </ul>
+    </li>
+      <li><a href="#">About us</a></li>
+    </ul>
+  </nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Shortest-Job-First Algorithm</h2>
+      <div class="button-container">
+        <button onclick="addRow()">Add Process</button>
+        <button onclick="compute()">Compute</button>
+      </div>
+      <div id="average" class="text-right average-box"></div>
+      
+      <div id="ganttChart" class="gantt-chart"></div>
+      <div id="ganttTimeline" class="gantt-timeline"></div>
+
+      <p>Enter Arrival times and Burst times for processes:</p>
+        <table id="inputTable" class="table table-bordered">
+            <thead>
+                <tr>
+                  <th>Process</th>
+                  <th>Arrival Time</th>
+                  <th>Burst Time</th>
+                  <th>Finish Time</th>
+                  <th>Turnaround Time</th>
+                  <th>Waiting Time</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+  </div>
+</div>
+
+<script src="sjf.js"></script>
+</body>
+</html>

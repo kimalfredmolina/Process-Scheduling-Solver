@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+    width: 100%;
+    /*background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);**/
+    background-image: url('logoo.png');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 15px;
+    background-color: #fff;
+    justify-content:center;
+}
+  
+
+/* dropdown code */
+.navbar .links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    font-size: 20px;
+}
+  
+.navbar .links a {
+    font-weight: 1000;
+    text-decoration: none;
+    color: #292866;
+    padding: 10px 0;
+    transition: 0.2s ease;
+}
+  
+.navbar .links a:hover {
+    color: lightblue;
+}
+.nav-links {
+    padding-left: 0; /* Adjust if there is padding */
+    margin-left: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-end !important;
+}
+
+.nav-link, .drop-down li {
+    list-style: none;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 35px;
+  font-size: 20px;
+}
+
+.navbar .links a {
+  font-weight: 1000;
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 0;
+  transition: 0.2s ease;
+}
+
+.navbar .links a:hover {
+  color: #47b2e4;
+}
+.nav-links {
+  padding-left: 0; 
+  margin-left: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-end !important;
+}
+
+.nav-link, .drop-down li {
+  list-style: none;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.drop-down {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  padding: 0.5rem 0;
+  background: #f4f4f4;
+  color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-size: 12px;
+  display: none;
+  z-index: 100;
+}
+
+.nav-link:hover {
+  background-color: #f4f4f4;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+
+.services:hover .drop-down {
+  display: block;
+}
+
+.services {
+  position: relative; 
+}
+
+.services a {
+  display: flex;
+  align-items: center;
+}
+
+.services .dropdown-icon {
+  font-size: 18px;
+  position: relative;
+  right: -5px;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.drop-down li:hover {
+  background: #f4f4f4;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+    background-color: #fff;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+
+.services:hover .drop-down {
+    display: block;
+}
+
+.services {
+    position: relative; /* Ensure this is set so the dropdown is positioned in relation to this */
+}
+
+.services a {
+    display: flex;
+    align-items: center;
+}
+
+.services .dropdown-icon {
+    font-size: 18px;
+    position: relative;
+    right: -5px;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out all;
+}
+
+.services:hover .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.drop-down li:hover {
+    background: #fff;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+  
+  
+  
+  .info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    padding: 0 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-image: url('');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+    
+  }
+  
+  .info .hero {
+    max-width: 50%;
+    color: black;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .info .img img {
+    width: 517px;
+    display: flex;
+    border-radius: 10%;
+    
+  }
+  
+  .info .buttons {
+    margin-top: 40px;
+  }
+  
+  .info .buttons a {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: 0.2s ease;
+    display: inline-block;
+  }
+  
+  .info .buttons a:not(:last-child) {
+    margin-right: 15px;
+  }
+  
+  .buttons .join {
+    background-color: #47b2e4;
+  }
+  
+  .info .buttons .learn {
+    border: 1px solid #47b2e4;
+    border-radius: 0.375rem;
+    background-color: #47b2e4;
+  }
+  
+  .info .buttons a:hover {
+    background-color: #47b2e4;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1250px;
+    margin: 150px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card-list .card-item {
+    background: #fff;
+    padding: 26px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border 0.5s ease;
+}
+
+.card-list .card-item:hover {
+    border: 2px solid #000;
+}
+
+.card-list .card-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+
+
+.card-list .developer {
+    background-color:#d1e8ff;; 
+    
+}   
+
+.card-item p {
+  color: black;
+  
+}
+
+.card-list .designer {
+    background-color: #d1e8ff;
+    color: #2968a8;
+}
+
+.card-list .editor {
+    background-color: #d6f8d6; 
+    color: #205c20;
+}
+
+.card-item span {
+    color: #2968a8;
+    font-size: 1.438rem;
+    margin-top: 28px;
+    font-weight: 600;
+}
+
+
+.card-list .card-item:hover .arrow  {
+    background: #000;
+    color: #fff; 
+}
+
+.footer {
+  padding: 20px 0;
+  background-color: whitesmoke;
+  height: 20%;
+  color: black;
+  text-align: center; 
+}
+
+.footer-links a {
+  color: #47b2e4;
+  margin-bottom: 50px;
+  font-size: 24px;
+  padding: 20px 15px;
+  
+}
+
+.footer-links a:hover {
+  color: #ddd;
+}
+
+.footer-text p {
+  margin-top: 5px;
+  font-size: 16px;
+  
+}
