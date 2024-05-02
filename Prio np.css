@@ -11,26 +11,88 @@ body {
     justify-content: space-between;
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 10px 5px;
     background-color: #f4f4f4;
     justify-content: center;
 }
-  
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    .navbar .links {
+        flex-direction: row;
+        gap: 5px; 
+        padding: 0;
+    }
+
+    .navbar .links a {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container button, .button-container .dropdown {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table, .gantt-chart {
+        width: auto;
+        overflow-x: auto;
+    }
+
+    .gantt-container, .gantt-timeline {
+        display: block;
+    }
+
+    h2, .navbar .links a, .nav-link, .drop-down li {
+        font-size: smaller; 
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .links, .nav-link {
+        font-size: 16px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+
+    .average-box, .gantt-chart {
+        padding: 20px; 
+    }
+}
+
+button, .nav-link, .drop-down li {
+    padding: 15px; 
+    margin: 5px 0; 
+}  
 
 /* dropdown code */
 .navbar .links {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 35px;
-    font-size: 20px;
+    gap: 10px;
+    font-size: 16px;
 }
   
 .navbar .links a {
     font-weight: 400;
     text-decoration: none;
-    color: #292866;
-    padding: 10px 0;
+    color: #000000;
+    padding: 10px 5px;
     transition: 0.2s ease;
 }
   
@@ -110,47 +172,6 @@ a {
     border-radius: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .navbar .links {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        justify-content: center;
-    }
-
-    .button-container button, .button-container .dropdown {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    table, .gantt-chart {
-        width: auto;
-        overflow-x: scroll;
-    }
-
-    .gantt-container, .gantt-timeline {
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar .links {
-        font-size: 16px;
-    }
-    
-    .button-container {
-        flex-direction: column;
-    }
-}
-
-
 h2 {
     margin-top: 20px;
 }
@@ -161,12 +182,15 @@ table {
     margin-bottom: 20px;
     box-shadow: 0 14px 18px 0 rgba(0,0,0,0.2); 
     background-color: #fff; 
+    overflow-x: auto; /* Allows horizontal scrolling */
+    display: block;
 }
 
 th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+    min-width: 80px;
 }
 
 .button-container {
@@ -298,3 +322,6 @@ table input[type="number"] {
     border: 1px solid #ccc; 
     border-radius: 4px; 
 }
+  
+
+

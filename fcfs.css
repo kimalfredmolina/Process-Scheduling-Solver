@@ -11,19 +11,27 @@ body {
     justify-content: space-between;
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 10px 5px;
     background-color: #f4f4f4;
     justify-content: center;
 }
 
-@media (max-width: 1200px) {
-    .navbar .links {
-        flex-direction: column;
-        gap: 20px;
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px;
     }
 
-    .nav-links {
-        justify-content: center;
+    .navbar .links {
+        flex-direction: row;
+        gap: 5px; 
+        padding: 0;
+    }
+
+    .navbar .links a {
+        font-size: 12px;
+        padding: 8px 4px;
     }
 }
 
@@ -65,6 +73,7 @@ body {
         padding: 20px; 
     }
 }
+
 button, .nav-link, .drop-down li {
     padding: 15px; 
     margin: 5px 0; 
@@ -75,15 +84,15 @@ button, .nav-link, .drop-down li {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 35px;
-    font-size: 20px;
+    gap: 10px;
+    font-size: 16px;
 }
   
 .navbar .links a {
     font-weight: 400;
     text-decoration: none;
     color: #000000;
-    padding: 10px 0;
+    padding: 10px 5px;
     transition: 0.2s ease;
 }
   
@@ -182,37 +191,6 @@ th, td {
     padding: 8px;
     text-align: center;
     min-width: 80px;
-}
-
-@media (max-width: 600px) {
-    /* Hide the original table headers on mobile */
-    table th {
-        display: none;
-    }
-
-    /* Make table rows behave like cards/lists */
-    table, td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Add a pseudo-element for labels from headers */
-    td:before {
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        width: 50%; /* Adjust based on your design needs */
-    }
-
-    /* Style the data to be full width and text-align to start */
-    td {
-        text-align: left;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px; /* Larger padding for easier reading */
-        border-bottom: 1px solid #ccc; /* Visually separates data entries */
-    }
 }
 
 .button-container {

@@ -11,26 +11,88 @@ body {
     justify-content: space-between;
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px 15px;
+    padding: 10px 5px;
     background-color: #f4f4f4;
     justify-content: center;
 }
-  
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px;
+    }
+
+    .navbar .links {
+        flex-direction: row;
+        gap: 5px; 
+        padding: 0;
+    }
+
+    .navbar .links a {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container button, .button-container .dropdown {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table, .gantt-chart {
+        width: auto;
+        overflow-x: auto;
+    }
+
+    .gantt-container, .gantt-timeline {
+        display: block;
+    }
+
+    h2, .navbar .links a, .nav-link, .drop-down li {
+        font-size: smaller; 
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .links, .nav-link {
+        font-size: 16px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+
+    .average-box, .gantt-chart {
+        padding: 20px; 
+    }
+}
+
+button, .nav-link, .drop-down li {
+    padding: 15px; 
+    margin: 5px 0; 
+}  
 
 /* dropdown code */
 .navbar .links {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 35px;
-    font-size: 20px;
+    gap: 10px;
+    font-size: 16px;
 }
   
 .navbar .links a {
     font-weight: 400;
     text-decoration: none;
     color: #000000;
-    padding: 10px 0;
+    padding: 10px 5px;
     transition: 0.2s ease;
 }
   
@@ -120,12 +182,15 @@ table {
     margin-bottom: 20px;
     box-shadow: 0 14px 18px 0 rgba(0,0,0,0.2); 
     background-color: #fff; 
+    overflow-x: auto; /* Allows horizontal scrolling */
+    display: block;
 }
 
 th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+    min-width: 80px;
 }
 
 .button-container {
@@ -168,7 +233,7 @@ th, td {
     align-items: flex-start; 
     margin-top: 20px;
     padding: 40px;
-    background: #e9ecef;
+    background: #f4f4f4;
     border-radius: 5px;
     overflow-x: auto;
 }
@@ -184,7 +249,7 @@ th, td {
     padding: 0 5px; 
 }
 .gantt-bar {
-    background-color: #007bff;
+    background-color: #47b2e4;
 }
 .gantt-bar.idle {
     background-color: #6c757d;
@@ -193,7 +258,7 @@ th, td {
 .gantt-container {
     display: flex;
     justify-content: flex-start;
-    background-color: #000000;
+    background-color: #e7dfdf;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 20px; 
@@ -209,14 +274,14 @@ th, td {
     color: white;
     text-align: center;
     border-radius: 5px;
-    background-color: #025299;
+    background-color: #47b2e4;
 }
 
 .gantt-block.idle {
     background-color: #6c757d;
 }
 .gantt-block{
-    background-color: #00335f;
+    background-color: #47b2e4;
 }
 /*need to fix */
 .gantt-timeline {
