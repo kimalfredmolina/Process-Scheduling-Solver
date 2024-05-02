@@ -15,7 +15,60 @@ body {
     background-color: #f4f4f4;
     justify-content: center;
 }
-  
+
+@media (max-width: 1200px) {
+    .navbar .links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container button, .button-container .dropdown {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    table, .gantt-chart {
+        width: auto;
+        overflow-x: auto;
+    }
+
+    .gantt-container, .gantt-timeline {
+        display: block;
+    }
+
+    h2, .navbar .links a, .nav-link, .drop-down li {
+        font-size: smaller; 
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .links, .nav-link {
+        font-size: 16px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+    }
+
+    .average-box, .gantt-chart {
+        padding: 20px; 
+    }
+}
+button, .nav-link, .drop-down li {
+    padding: 15px; 
+    margin: 5px 0; 
+}  
 
 /* dropdown code */
 .navbar .links {
@@ -110,47 +163,6 @@ a {
     border-radius: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .navbar .links {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .nav-links {
-        justify-content: center;
-    }
-
-    .button-container button, .button-container .dropdown {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    table, .gantt-chart {
-        width: auto;
-        overflow-x: scroll;
-    }
-
-    .gantt-container, .gantt-timeline {
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar .links {
-        font-size: 16px;
-    }
-    
-    .button-container {
-        flex-direction: column;
-    }
-}
-
-
 h2 {
     margin-top: 20px;
 }
@@ -161,12 +173,46 @@ table {
     margin-bottom: 20px;
     box-shadow: 0 14px 18px 0 rgba(0,0,0,0.2); 
     background-color: #fff; 
+    overflow-x: auto; /* Allows horizontal scrolling */
+    display: block;
 }
 
 th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: center;
+    min-width: 80px;
+}
+
+@media (max-width: 600px) {
+    /* Hide the original table headers on mobile */
+    table th {
+        display: none;
+    }
+
+    /* Make table rows behave like cards/lists */
+    table, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Add a pseudo-element for labels from headers */
+    td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        width: 50%; /* Adjust based on your design needs */
+    }
+
+    /* Style the data to be full width and text-align to start */
+    td {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px; /* Larger padding for easier reading */
+        border-bottom: 1px solid #ccc; /* Visually separates data entries */
+    }
 }
 
 .button-container {
