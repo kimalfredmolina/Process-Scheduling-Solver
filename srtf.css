@@ -43,7 +43,7 @@ body {
 
     table, .gantt-chart {
         width: auto;
-        overflow-x: auto;
+        overflow-x: scroll;
     }
 
     .gantt-container, .gantt-timeline {
@@ -182,7 +182,7 @@ table {
     margin-bottom: 20px;
     box-shadow: 0 14px 18px 0 rgba(0,0,0,0.2); 
     background-color: #fff; 
-    overflow-x: auto; /* Allows horizontal scrolling */
+    table-layout: fixed;
     display: block;
 }
 
@@ -191,6 +191,12 @@ th, td {
     padding: 8px;
     text-align: center;
     min-width: 80px;
+    max-width: 200px;
+}
+@media (min-width: 768px) {
+    th, td {
+        width: 16.66%; 
+    }
 }
 
 .button-container {

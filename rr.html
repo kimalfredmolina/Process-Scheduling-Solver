@@ -41,7 +41,7 @@
 
       <div class="button-container">
         <button onclick="addRow()">Add Process</button>
-        <button onclick="compute()">Compute</button>
+        <button onclick="compute()">Compute</button>    
 
       <div id="average" class="text-right average-box"></div>
 
@@ -49,6 +49,10 @@
       <div id="ganttTimeline" class="gantt-timeline"></div>
       
       <p>Enter Arrival times, Burst times and Time Quantum for processes:</p>
+      <div style="margin-top: 20px;">
+        <label for="timeQuantum">Time Quantum:</label>
+        <input type="number" id="timeQuantum" min="1" value="2" style="margin-left: 10px;">
+      </div>
         <table id="inputTable" class="table table-bordered">
             <thead>
                 <tr>
