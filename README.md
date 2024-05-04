@@ -26,6 +26,6 @@ Access from any device with seamless experience.
 To get started, simply select the desired scheduling algorithm from the menu and input your process data. Explore the various features to gain insights into process scheduling and optimization.
 
 ## Feedback
-Have suggestions or feedback? We'd love to hear from you! Reach out to us via kimalfredmolina1224@gmail.com and let us know how we can make the Process Scheduling Solver even better.
+Have suggestions or feedback? We'd love to hear from you! Reach out to us via kimalfredmolina1224@gmail.com or https://github.com/kimalfred and let us know how we can make the Process Scheduling Solver even better.
 
 Happy scheduling!
