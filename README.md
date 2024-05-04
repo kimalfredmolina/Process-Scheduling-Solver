@@ -31,3 +31,10 @@ To get started, simply select the desired scheduling algorithm from the menu and
 Have suggestions or feedback? We'd love to hear from you! Reach out to us via kimalfredmolina1224@gmail.com or https://github.com/kimalfred and let us know how we can make the Process Scheduling Solver even better.
 
 Happy scheduling!
+
+## Contributors
+
+- [Ken Villaruel](https://github.com/chikening)
+- [Fritz Catalan](https://github.com/Yoznov)
+- [Laurence Deocareza](https://www.facebook.com/laurence.deocareza.3)
+- [Justin Morales](https://www.facebook.com/justin.morales.77377)
