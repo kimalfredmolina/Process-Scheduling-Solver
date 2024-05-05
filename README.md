@@ -1,7 +1,5 @@
 # Process Scheduling Solver
 
-<<<<<<< HEAD
-=======
 Welcome to the Process Scheduling Solver! This tool provides solutions for various process scheduling algorithms to help manage and optimize system resources efficiently.
 ## Features
 ![image](https://github.com/kimalfred/Process-Scheduling-Solver/assets/119164038/7f67c12e-ef4d-42a2-9f5d-fc75271b7a7a)
@@ -18,7 +16,6 @@ Input parameters to find optimal scheduling solutions.
 ### Responsive Website
 Access from any device with seamless experience.
 
->>>>>>> 413434ec865c066883bee7c7c2d450689478660b
 ## Process Algorithms
 
 1. **First Come First Serve**
