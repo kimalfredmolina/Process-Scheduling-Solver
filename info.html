@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CPU Scheduling TUtorial</title>
-    <link rel="icon" type="image/png" href="/pics/logoa.png">
+    <link rel="icon" type="image/png" href="logoa.png">
     <link rel="stylesheet" href="infostyle.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
@@ -90,7 +90,7 @@
     <main class="main">
       <div class="container">
         <div class="wrapper">
-          <img class ="cpu" src="/pics/CPU-Scheduling.jpg" alt="cpu">
+          <img class ="cpu" src="CPU-Scheduling.jpg" alt="cpu">
           <div class="cpu-text">
           <h1>What is <br>  CPU-Scheduling?</h1>
           <p>
@@ -112,7 +112,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>First Come First Serve</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="/pics/FCFS-PIC.png" alt="fcfspic">
+            <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
             <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -137,7 +137,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/FCFS-AVG.png" alt="fcfsavg">
+              <img class="fcfsavg" src="FCFS-AVG.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
@@ -153,7 +153,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>Shortest Job First</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Job First (SJF) or Shortest Job Next (SJN) is a scheduling policy that prioritizes the process with the smallest execution time. This can be either preemptive or non-preemptive. It’s a Greedy Algorithm known for its minimal average waiting time among all scheduling algorithms. However, it may lead to starvation if shorter processes continually arrive, which can be mitigated using the concept of ageing. While it’s practically challenging to implement as the Operating System may not know burst times, several methods, like a weighted average of previous execution times, can estimate a job’s execution time. This makes SJF suitable for specialized environments where accurate running time estimates are available. The algorithm works by sorting all processes according to their arrival time, then selecting the process with the minimum arrival and burst time. After a process is completed, a pool of processes that arrive afterward is created, and the process with the minimum burst time is selected from this pool. </h5>
-            <img class = fcfspic src="/pics/shortest job first.png" alt="fcfspic">
+            <img class = fcfspic src="shortest job first.png" alt="fcfspic">
             <h5>So let's work on some examples for Shortest Job First from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -178,7 +178,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (5 - 1 = 4)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/sjf avg.png" alt="fcfsavg">
+              <img class="fcfsavg" src="sjf avg.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 52 divided by 5, which gives us 10.4</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 22 divided by 5, which gives us 4.4 as the answer</b></li>
@@ -194,7 +194,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>Shortest Remaining Time First</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Remaining Time First (SRTF) is a preemptive version of the Shortest Job First (SJF) scheduling algorithm. Unlike SJF, which is non-preemptive and lets a process run to completion once started, SRTF can interrupt a running process if a new process with a shorter remaining time arrives. This leads to improved response times as shorter tasks get completed quickly. However, it also results in increased overhead due to frequent context switching and CPU time monitoring, unlike SJF which has less overhead but may not provide the best turnaround times for shorter tasks that arrive after a long task has started execution.</h5>
-            <img class = fcfspic src="/pics/SRTF-PIC.png" alt="fcfspic">
+            <img class = fcfspic src="SRTF-PIC.png" alt="fcfspic">
             <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -219,7 +219,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 9 and a burst time of 8</b>. By subtracting those two, we get a 1 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (1 - 1 = 0)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/SRTF-AVG.png" alt="fcfsavg">
+              <img class="fcfsavg" src="SRTF-AVG.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 49 divided by 5, which gives us 9.8</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 19 divided by 5, which gives us 3.8 as the answer</b></li>
@@ -235,7 +235,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>Priority(Preemptive)</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="/pics/PRIO-PIC.png" alt="fcfspic">
+            <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
             <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -260,7 +260,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/PRIO-AVG.png" alt="fcfsavg">
+              <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
@@ -276,7 +276,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>Priority(Non-Preemptive)</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">Priority scheduling is a non-preemptive algorithm commonly used in batch systems. It operates by assigning each process an arrival time and priority, with the first process scheduled being the one with the lowest arrival time. If multiple processes share the same arrival time, the one with the highest priority is scheduled first. If two processes have the same priority, the one with the lower process number is scheduled first. This process continues until all processes have been executed. It’s important to note that the priority number’s significance (whether a lower or higher number indicates a higher priority) will be clearly stated in the question. Once all processes have arrived, they can be scheduled based on their priority. This approach ensures efficient and fair process scheduling.</h5>
-            <img class = fcfspic src="/pics/PRIO-PIC.png" alt="fcfspic">
+            <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
             <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -298,7 +298,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (15 - 9 = 6)</b><b>J3 = (9 - 7 = 2), j4 = (21 - 5 = 16), j5 = (5 - 1 = 4)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/PRIO-AVG.png" alt="fcfsavg">
+              <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 58 divided by 5, which gives us 11.6</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 28 divided by 5, which gives us 5.6 as the answer</b></li>
@@ -314,7 +314,7 @@
         <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
           <h2>Round Robin</h2>  
           <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="/pics/FCFS-PIC.png" alt="fcfspic">
+            <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
             <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
             <ul class="steps">
               <h2>Gantt Chart</h2>
@@ -339,7 +339,7 @@
               <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
               <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
               <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="/pics/FCFS-PIC.png" alt="fcfsavg">
+              <img class="fcfsavg" src="FCFS-PIC.png" alt="fcfsavg">
               <h4>Average turnaround time</h4>
               <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
               <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
