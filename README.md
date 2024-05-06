@@ -31,7 +31,6 @@ To get started, simply select the desired scheduling algorithm from the menu and
 ## Feedback
 Have suggestions or feedback? We'd love to hear from you! Reach out to us via kimalfredmolina1224@gmail.com or https://github.com/kimalfred and let us know how we can make the Process Scheduling Solver even better.
 
-Happy scheduling!
 
 ## Contributors
 
