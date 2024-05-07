@@ -16,14 +16,14 @@ Input parameters to find optimal scheduling solutions.
 ### Responsive Website
 Access from any device with seamless experience.
 
-## Process Algorithms
+## Process Algorithm Calculator
 
 1. **First Come First Serve**
 2. **Shortest Job First**
 3. **Shortest Remaining Time First**
 4. **Priority (Preemptive)**
 5. **Priority (Non-Preemptive)**
-6. **Round Robin**
+6. **Round Robin** - To be updated
 
 ## Usage
 To get started, simply select the desired scheduling algorithm from the menu and input your process data. Explore the various features to gain insights into process scheduling and optimization.
