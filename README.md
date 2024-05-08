@@ -6,15 +6,15 @@ Welcome to the Process Scheduling Solver! This tool provides solutions for vario
 
 
 ### Tutorial Algorithms
-Clear explanations and examples to understand each scheduling algorithm.
+-Clear explanations and examples to understand each scheduling algorithm.
 ### Gantt Chart
-Interactive visualization of scheduling results.
+-Interactive visualization of scheduling results.
 ### Compute Average
-Calculate waiting time, turnaround time, and other metrics.
+-Calculate waiting time, turnaround time, and other metrics.
 ### Process Scheduling Calculator
-Input parameters to find optimal scheduling solutions.
+-Input parameters to find optimal scheduling solutions.
 ### Responsive Website
-Access from any device with seamless experience.
+-Access from any device with seamless experience.
 
 ## Process Algorithm Calculator
 
