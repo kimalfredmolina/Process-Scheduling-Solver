@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CPU Scheduling TUtorial</title>
-    <link rel="icon" type="image/png" href="logoa.png">
+    <title>CPU Scheduling Tutorial</title>
     <link rel="stylesheet" href="tutorial.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   </head>
   <body>
     <nav class="sidebar">
@@ -44,41 +43,40 @@
             <a href="#RR">Round-Robin</a>
           </li>
 
-          <li class="item">
-            <div class="submenu-item">
-              <span>Process Calculator</span>
-              <i class="fa-solid fa-chevron-right"></i>
+          <div class="submenu-item">
+            <span>Process Calculator</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <ul class="menu-items submenu">
+            <div class="menu-title">
+              <i class="fa-solid fa-chevron-left"></i>
+              Tutorial
             </div>
-            <ul class="menu-items submenu">
-              <div class="menu-title">
-                <i class="fa-solid fa-chevron-left"></i>
-                Tutorial
-              </div>
-              <li class="item">
-                <a href="fcfs.html">First Come First Serve</a>
-              </li>
+            <li class="item">
+              <a href="fcfs.html">First Come First Serve</a>
+            </li>
 
-              <li class="item">
-                <a href="sjf.html">Shortest-Job-First</a>
-              </li>
+            <li class="item">
+              <a href="sjf.html">Shortest-Job-First</a>
+            </li>
 
-              <li class="item">
-                <a href="srtf.html">Shortest-Remaining-Time-First</a>
-              </li>
+            <li class="item">
+              <a href="srtf.html">Shortest-Remaining-Time-First</a>
+            </li>
 
-              <li class="item">
-                <a href="Prio p.html">Priority (Preemptive)</a>
-              </li>
+            <li class="item">
+              <a href="Prio p.html">Priority (Preemptive)</a>
+            </li>
 
-              <li class="item">
-                <a href="Prio np.html">Priority (Non-Preemptive)</a>
-              </li>
+            <li class="item">
+              <a href="Prio np.html">Priority (Non-Preemptive)</a>
+            </li>
 
-              <li class="item">
-                <a href="rr.html">Round Robin</a>
-              </li>
-            </ul>
-          </li>
+            <li class="item">
+              <a href="rr.html">Round Robin</a>
+            </li>
+          </ul>
+        </li>
 
         </ul>
       </div>
@@ -87,274 +85,268 @@
     <nav class="navbar">
       <i class="fa-solid fa-bars" id="sidebar-close"></i>
     </nav>
+
+    
     <main class="main">
-      <div class="container">
-        <div class="wrapper">
-          <img class ="cpu" src="CPU-Scheduling.jpg" alt="cpu">
-          <div class="cpu-text">
-          <h1>What is <br>  CPU-Scheduling?</h1>
-          <p>
-            CPU scheduling, a critical component of process management, facilitates the efficient utilization of the CPU by allowing processes to execute while others are temporarily delayed due to resource unavailability such as I/O operations. Its primary objective is to ensure timely completion of tasks, enhancing system efficiency, speed, and fairness. When the CPU is idle, the operating system employs a temporary scheduler to select the next process from the queue of ready processes awaiting execution. This scheduler evaluates the readiness of each process in memory and allocates the CPU to the most suitable candidate, thereby optimizing resource utilization and overall system performance.
-          </p>
-          </div>
-        </div>
-      </div>
+      <style>
+        h2 {
+          color: rgb(252, 0, 0);
+        }
+      </style>
+      <section class="container py-5" id="CPU">
+        <div class="container">
+          <div class="wrapper">
+            <div class="cpu-text">
+            <h1>What is <br>  CPU-Scheduling?</h1>
+            <p>
+              CPU scheduling, a critical component of process management, facilitates the efficient utilization of the CPU by allowing processes to execute while others are temporarily delayed due to resource unavailability such as I/O operations. Its primary objective is to ensure timely completion of tasks, enhancing system efficiency, speed, and fairness. When the CPU is idle, the operating system employs a temporary scheduler to select the next process from the queue of ready processes awaiting execution. This scheduler evaluates the readiness of each process in memory and allocates the CPU to the most suitable candidate, thereby optimizing resource utilization and overall system performance.
+            </p>
+            <img class ="cpu" src="CPU-Scheduling.jpg" alt="cpu">
+
+            <section class="container py-5" id="FCFS">
+              <div class="row mt-4 py-3">
+                <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                  <br>
+                  <br>
+                  <h2>First Come First Serve</h2>  
+                  <h5>The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
+                    <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
+                    <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
+                    <ul class="steps">
+                      <h2>Gantt Chart</h2>
+                      <li>The first would be to solve for the completion time, and this can be done by using a gantt chart. With both the arrival time and the given time, we could use that for the gantt chart.</li>
+                      <li>So using the arrival time of the processes, we have to process the one who came earlier, so it's going to be <b>J1</b> as it's the one who came first with the arrival time of 0.</li>
+                      <li>Then we have to process the <b>J1</b> with its burst time of 8.</li>
+                      <li>After we processed the first job, as you can see, we ended it at 8. Within those 8 came 2 jobs, which were <b>J3</b> and <b>J5</b>, which have a burst time of 7 and 4, respectively.</li>
+                      <li>To know which one to process first in a queue of jobs in the <b> First Come First Serve Algorithm </b> we have to use the arrival time of the queued jobs.</li>
+                      <li>In this case we would process the <b>J5</b> first because it arrived much earlier than the <b>J3</b>.</li>
+                      <li>Then we would use all of the burst time of <b>J5</b>, and the process ended at 9, then another job arrived, which is the j4.</li>
+                      <li>Using the same criteria we used earlier for multiple queued jobs, we would process the one who arrived first, which in this case is <b>J3</b>, which ended at 16. Inside those 16 then arrived another job, which is <b>J2</b>.</li>
+                      <li>Then we'll use the criteria again, which in this case is <b>J4</b> because it arrived first than <b>j2</b>. After we processed <b>J4</b>, which ended at 21, no other job arrived, so we will process the remaining job, <b>J2</b>, which ended at 30.</li>
+                      <h2>Turnaround Time and Waiting Time</h2>
+                      <h4>Turnaround-Time</h4>
+                      <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                      <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                      <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                      <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 16 = 9), J4 = ( 9 - 21 = 12), J5 = (4 - 9 = 5)</b>.</li>
+                      <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                      <h4>Waiting Time</h4>
+                      <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                      <li>For <b>J1</b>, we can see that it has a <b>turnaround s of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
+                      <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
+                      <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                      <img class="fcfsavg" src="FCFS-AVG.png" alt="fcfsavg">
+                      <h4>Average turnaround time</h4>
+                      <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
+                      <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
+                      <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
+                    </ul>
+                  </section>
+
+                  <section class="container py-5" id="SJF">
+                    <div class="row mt-4 py-3">
+                      <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <h2>Shortest Job First</h2>  
+                        <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Job First (SJF) or Shortest Job Next (SJN) is a scheduling policy that prioritizes the process with the smallest execution time. This can be either preemptive or non-preemptive. It’s a Greedy Algorithm known for its minimal average waiting time among all scheduling algorithms. However, it may lead to starvation if shorter processes continually arrive, which can be mitigated using the concept of ageing. While it’s practically challenging to implement as the Operating System may not know burst times, several methods, like a weighted average of previous execution times, can estimate a job’s execution time. This makes SJF suitable for specialized environments where accurate running time estimates are available. The algorithm works by sorting all processes according to their arrival time, then selecting the process with the minimum arrival and burst time. After a process is completed, a pool of processes that arrive afterward is created, and the process with the minimum burst time is selected from this pool. </h5>
+                          <img class = fcfspic src="shortest job first.png" alt="fcfspic">
+                          <h5>So let's work on some examples for Shortest Job First from the given picture above and break it down bit by bit.</h5>
+                          <ul class="steps">
+                            <h2>Gantt Chart</h2>
+                            <li>As we did in the first come, first serve algorithm, we would <b>create a Gantt chart based on the arrival and burst time of our jobs.</b></li>
+                            <li>Although it's almost the same, it has a different way of doing its priority compared to the <b>first come, first serve</b>.</li>
+                            <li><b>Shortest Job First uses burst time</b> to know which to process next if there are multiple jobs on the ram.</li>
+                            <li>So with that in mind we can now create a gantt chart for our <b>Shortest Jobs First Algorithm</b>.</li>
+                            <li>Back to the table, we can see that <b>J1 arrived first</b> and no other jobs are in the ram, so now we have to process j1 all the way.</li>
+                            <li>Now that we have a <b>burst time of 8, J3 and J5 arrived.</b></li>
+                            <li>And now we can use the criteria for <b>Shortest Job First</b>, which is that <b>when there are more than 1 process inside the ram</b>, the one who will be <b>processed first is the one with the lowest burst time.</b></li>
+                            <li>In this case, based on the table above, <b>J5 has a lower burst time than J3, so J5 will be processed first.</b> After we processed that we were at 9 m/s,  another job arrived, which is the <b>J4</b>.</li>
+                            <li>So by utilizing the criteria again, <b>we will process J4 first as it has a lower burst time than J3 in the queue</b> ending at 14 then comes <b>J2. Now we will process J3 as it has a lower burst time than j2</b>ending at 21, and lastly, we will now process <b>J2 and end at 30 m/s.</b></j2></li>
+                            <h2>Turnaround Time and Waiting Time</h2>
+                            <h4>Turnaround-Time</h4>
+                            <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                            <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                            <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                            <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 21 = 14), J4 = ( 9 - 14 = 5), J5 = (4 - 9 = 5)</b>.</li>
+                            <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                            <h4>Waiting Time</h4>
+                            <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                            <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
+                            <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (5 - 1 = 4)</b></li>
+                            <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                            <img class="fcfsavg" src="sjf avg.png" alt="fcfsavg">
+                            <h4>Average turnaround time</h4>
+                            <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 52 divided by 5, which gives us 10.4</b>.</li>
+                            <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 22 divided by 5, which gives us 4.4 as the answer</b></li>
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
+                          </ul>
+                  </section>
+              
+                  <section class="container py-5" id="SRTF">
+                    <div class="row mt-4 py-3">
+                      <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <h2>Shortest Remaining Time First</h2>  
+                        <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Remaining Time First (SRTF) is a preemptive version of the Shortest Job First (SJF) scheduling algorithm. Unlike SJF, which is non-preemptive and lets a process run to completion once started, SRTF can interrupt a running process if a new process with a shorter remaining time arrives. This leads to improved response times as shorter tasks get completed quickly. However, it also results in increased overhead due to frequent context switching and CPU time monitoring, unlike SJF which has less overhead but may not provide the best turnaround times for shorter tasks that arrive after a long task has started execution.</h5>
+                          <img class = fcfspic src="SRTF-PIC.png" alt="fcfspic">
+                          <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
+                          <ul class="steps">
+                            <h2>Gantt Chart</h2>
+                            <li>To make a gantt chart for the <b>SRTF, or shortest remaining time first</b>, it's basically the same as shortest job first; the only difference is that this scheduling algorithm is preemptive, meaning it has to stop processing the job if another job arrives while processing.</li>
+                            <li>Referring to the table above, we can see that <b>J1 arrived first,</b> so we will process it.</li>
+                            <li>Now, while it is processing, we can now <b>use the rule for the shortest remaining time first algorithm</b>, and that is, when a job arrives, <b>the current job that is being processed will come to a halt.</b></li>
+                            <li>So now <b>J1 will have to stop at time 4 because the job J5 arrived and we have to deduct the time used for J1 making its burst time 4</b>.Now that we have a queue, we would now have to look at the burst time to see which job to process first, much like Shortest Job First.</li>
+                            <li><b>J5 has a lower burst time than J1, so we have to process it first</b>. Using all of its burst time, we would stop at time 5, in which only J1 is in the queue. So we have to process J1 until time 7, deduct the 2 from its current burst time making it 2, and then <b>another job arrives, which is J3</b>.</li>
+                            <li>Again, we have multiple jobs in the queue, so we would have to check their burst time to see which is lower so that it can be processed first. In this case, it would be <b>J1 as it has only two burst time left</b> processing until time 9, at which time another job arrives, which is J4.</li>
+                            <li>We would have to <b>process J4 first as it has a lower burst time than J3</b>, We would only consume 1 of its burst time as <b>another job arrives at time 10, which is J2.</b></li>
+                            <li>Now that we have all the processes in the ram and there are no more jobs to arrive, we can now consume all of the burst time of the remaining jobs in the queue without stopping the process.</li>
+                            <li>Using the criteria again, <b>we can check each of their burst times to know which to process</b>. First, we will have to process J4 and consume its remaining time, which is 4, ending its process at time 14. Next is J3, which has a burst time of 7, ending at time 21, and lastly, the remaining job, which is J2, with a burst time of 9, ending at time 30.</li>
+                            <h2>Turnaround Time and Waiting Time</h2>
+                            <h4>Turnaround-Time</h4>  
+                            <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                            <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                            <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                            <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 9</b>. Using the formula for the <b>turnaround-time (0-9)</b>, the answer would be 9. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 21 = 14), J4 = ( 9 - 14 = 5), J5 = (4 - 5 = 1)</b>.</li>
+                            <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                            <h4>Waiting Time</h4>
+                            <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                            <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 9 and a burst time of 8</b>. By subtracting those two, we get a 1 as an answer.Now lets do the rest of the jobs.</li>
+                            <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (1 - 1 = 0)</b></li>
+                            <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                            <img class="fcfsavg" src="SRTF-AVG.png" alt="fcfsavg">
+                            <h4>Average turnaround time</h4>
+                            <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 49 divided by 5, which gives us 9.8</b>.</li>
+                            <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 19 divided by 5, which gives us 3.8 as the answer</b></li>
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
+                          </ul>
+                  </section>                          
+              
+                  <section class="container py-5" id="PRIO">
+                    <div class="row mt-4 py-3">
+                      <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <h2>Priority(Preemptive)</h2>  
+                        <h5 class="text-secondary fw-normal py-2 Lucida Console">The Preemptive Priority CPU Scheduling Algorithm is a method that prioritizes tasks based on their   rank, with lower-ranking processes having higher priority. In the event of a conflict where multiple processes have the same priority, it defaults to a First Come, First Serve (FCFS) approach. The algorithm begins by selecting the first process with an arrival time of zero. It then checks the priority of the next available process, executing the one with a higher priority. If the priorities are equal, it executes the process that arrived first. This process is repeated until all processes have been executed, always choosing the highest priority process at each step. This ensures that tasks are executed efficiently and in order of their importance.
+                          <br>
+                          <br>
+                          Furthermore, in preemptive priority CPU scheduling, a running process can be interrupted by a higher-priority process. If a process with a higher priority arrives, the currently running process is suspended, and the higher priority process is executed. If the preempted process still has CPU burst time left, it is then added back to the ready queue and waits for its next opportunity to run. This dynamic nature of preemptive scheduling allows it to quickly respond to changes in process priority, ensuring efficient use of CPU resources.</h5>
+                          <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
+                          <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
+                          <ul class="steps">
+                            <h2>Gantt Chart</h2>
+                            <li>So the same as the non-preemptive priority algorithm, the job that arrives at time 0 is J1, but we would only process J1 until time 4 because another job will arrive at that time, so from 8 J1's burst time was reduced to 4 as we used a part of its burst time. That's the rule for the preemptive priority algorithm.</li>
+                            <li>Now at time 4, a job arrives, which is J5. Now that we have multiple jobs at the ram, we have to check their priority to know which one is supposed to be processed first. J5 has a higher priority than J1, so we would process that first until time 5, because it only has a burst time of 1. </li>
+                            <li>We would process J1 again as it is the only job in the queue, but only until time 7 as another job arrived, which is J3. Now just reduce the used burst time for the current burst time of J1, and that leaves us with a burst time of 2.</li>
+                            <li>Now that we have multiple jobs in the queue again, we will look at their priority to see which one to process first. J3 has a higher priority than J1, so we would process J3 first until time 9 as another job arrives, which is J4.</li>
+                            <li>Again, look at their priorities and check which one has the highest priority over the other; in this case, J3 still has the higher priority than the two, so we would process J3 first only until time 10, at which point J2 arrives.</li>
+                            <li>As we can see at the table, no other jobs will arrive anymore, so now we can use all of their remaining burst time without stopping.</li>
+                            <li>Checking their burst time again, we can process J3 first as it has a higher priority. Using all of its remaining burst time, we would end at time 14.</li>
+                            <li>Next would be J2, as it has a higher priority, ending at time 23, then J1, ending at time 25, and finally J4, ending at time 30.</li>
+                            
+                            <h2>Turnaround Time and Waiting Time</h2>
+                            <h4>Turnaround-Time</h4>
+                            <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                            <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                            <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                            <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 25</b>. Using the formula for the <b>turnaround-time (0-25)</b>, the answer would be 25. Now do the same for the others. <b>J2 = (10 - 23 = 13), J3 = (7 - 14 = 7), J4 = ( 9 - 30 = 21), J5 = (4 - 5 = 1)</b>.</li>
+                            <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                            <h4>Waiting Time</h4>
+                            <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                            <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 25 and a burst time of 8</b>. By subtracting those two, we get a 17 as an answer.Now lets do the rest of the jobs.</li>
+                            <li>For <b>J2</b>,it has a <b>turnaround time of 13</b> and a <b>burst time of 9 </b>so <b>J2 = (13 - 9 = 4)</b><b>J3 = (7 - 7 = 0), j4 = (21 - 5 = 16), j5 = (1 - 1 = 0)</b></li>
+                            <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                            <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
+                            <h4>Average turnaround time</h4>
+                            <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 67 divided by 5, which gives us 13.4</b>.</li>
+                            <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 37 divided by 5, which gives us 7.4 as the answer</b></li>
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
+                          </ul>
+                  </section>
+                  
+                  <section class="container py-5" id="NON-PRIO">
+                    <div class="row mt-4 py-3">
+                      <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <h2>Priority(Non-Preemptive)</h2>  
+                        <h5 class="text-secondary fw-normal py-2 Lucida Console">Priority scheduling is a non-preemptive algorithm commonly used in batch systems. It operates by assigning each process an arrival time and priority, with the first process scheduled being the one with the lowest arrival time. If multiple processes share the same arrival time, the one with the highest priority is scheduled first. If two processes have the same priority, the one with the lower process number is scheduled first. This process continues until all processes have been executed. It’s important to note that the priority number’s significance (whether a lower or higher number indicates a higher priority) will be clearly stated in the question. Once all processes have arrived, they can be scheduled based on their priority. This approach ensures efficient and fair process scheduling.</h5>
+                          <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
+                          <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
+                          <ul class="steps">
+                            <h2>Gantt Chart</h2>
+                            <li>The first job to arrive at the queue is J1, so we have to process all of its burst time. That ends at time 8, and within that time, two jobs arrive at the queue, which are J5 and J3.</li>
+                            <li>Now that we have multiple jobs in the queue, we will have to use the criteria for priority, which states that we have to process the one who has a higher priority than the others, with 1 being the highest priority.</li>
+                            <li>So back to the example, we can see two jobs in the queue, J5 and J3. J5 has a priority number of 1, and J3 has the same priority number, 1. To break the tie between the two, we would look at the next criteria, which is the burst time. The lower the burst time, the higher the priority to be processed, the same as the Shortest Job First Scheduling Algorithm.</li>
+                            <li>So in this case, we would process J5 first, as it has a lower burst time than J3. After we processed J5, we arrived at time 9, where another job arrived, which was J4.</li>
+                            <li>Again, we have multiple jobs in the queue, so we would use the criteria for the priority scheduling algorithm to know which one to process first. As we can see in the table above, J3 has a priority number of 1 and J4 has a priority number of 4, so we would have to process J3 first as it has a higher priority value than J4, ending its burst time at time 16; another job arrived, which is J2.</li>
+                            <li>J2 has a priority number of 2 and J4 has a priority number of 4, so we will have to process J2 first, ending its burst time at time 25, and finally processing the final job in the queue, which is J4, ending its burst time at time 30.</li>
+                            <h2>Turnaround Time and Waiting Time</h2>
+                            <h4>Turnaround-Time</h4>
+                            <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                            <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                            <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                            <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 25 = 15), J3 = (7 - 16 = 9), J4 = ( 9 - 30 = 21), J5 = (4 - 9 = 5)</b>.</li>
+                            <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                            <h4>Waiting Time</h4>
+                            <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                            <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
+                            <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (15 - 9 = 6)</b><b>J3 = (9 - 7 = 2), j4 = (21 - 5 = 16), j5 = (5 - 1 = 4)</b></li>
+                            <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                            <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
+                            <h4>Average turnaround time</h4>
+                            <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 58 divided by 5, which gives us 11.6</b>.</li>
+                            <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 28 divided by 5, which gives us 5.6 as the answer</b></li>
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>              
+                          </ul>
+                  </section>
+
+                  <section class="container py-5" id="RR">
+                    <div class="row mt-4 py-3">
+                      <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <h2>Round Robin</h2>  
+                        <h5 class="text-secondary fw-normal py-2 Lucida Console">The Round Robin CPU scheduling algorithm is a preemptive version of the First Come First Serve algorithm, where each process is assigned a fixed time slot in a cyclical manner. This algorithm, which focuses on time-sharing techniques, allows each process in the ready queue to be assigned the CPU for a specific time quantum. If a process completes its execution within this time, it ends; otherwise, it returns to the waiting table for its next turn. The Round Robin algorithm is simple, easy to implement, and starvation-free, ensuring fairness as each process gets an equal share of the CPU. However, it has the disadvantage of increased context switching overhead, larger waiting and response times, low throughput, and potentially large Gantt charts if the quantum time is small. Despite these drawbacks, it remains one of the most commonly used techniques in CPU scheduling.</h5>
+                          <img class = fcfspic src="RR-PIC.png" alt="fcfspic">
+                          <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
+                          <ul class="steps">
+                            <h2>Gantt Chart</h2>
+                            <li>First, we need to create a Gantt chart. Given the quantum of 3, each job will be processed for a maximum of 3 units at a time.</li>
+                            <li>We start with <b>J1</b> as it arrives first at time 0. We process it for 3 units (the quantum), so it ends at time 3 and goes back to the end of the queue with a remaining burst time of 5.</li>
+                            <li>Next, we have <b>J5</b> which arrived at time 4. Since no other jobs have arrived between time 3 and 4, the CPU is idle for 1 unit. We then process <b>J5</b> for 1 unit (its total burst time), so it ends at time 5.</li>
+                            <li>At time 5, both <b>J1</b> and <b>J3</b> are in the queue. But <b>J1</b> arrived earlier, so we process it next for 3 units. It ends at time 8 with a remaining burst time of 2.</li>
+                            <li>Next, we process <b>J3</b> for 3 units. It ends at time 11 with a remaining burst time of 4.</li>
+                            <li>At time 11, <b>J1</b>, <b>J4</b>, and <b>J2</b> are in the queue. We process <b>J1</b> first as it arrived earlier. It ends at time 13 and is now complete.</li>
+                            <li>We then process <b>J4</b> for 3 units. It ends at time 16 with a remaining burst time of 2.</li>
+                            <li>Next, we process <b>J2</b> for 3 units. It ends at time 19 with a remaining burst time of 6.</li>
+                            <li>We then process <b>J3</b> for 3 units. It ends at time 22 with a remaining burst time of 1.</li>
+                            <li>Next, we process <b>J4</b> for 2 units. It ends at time 24 and is now complete.</li>
+                            <li>We then process <b>J2</b> for 3 units. It ends at time 27 with a remaining burst time of 3.</li>
+                            <li>Next, we process <b>J3</b> for 1 unit. It ends at time 28 and is now complete.</li>
+                            <li>Finally, we process <b>J2</b> for 3 units. It ends at time 31 and is now complete.</li>
+
+                            <h2>Turnaround Time and Waiting Time</h2>
+                            <h4>Turnaround-Time</h4>
+                            <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
+                            <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
+                            <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
+                            <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 9</b>. Using the formula for the <b>turnaround-time (0-9)</b>, the answer would be 9. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 27 = 20), J4 = ( 9 - 23 = 14), J5 = (4 - 7 = 3)</b>.</li>
+                            <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
+                            <h4>Waiting Time</h4>
+                            <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
+                            <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 9 and a burst time of 8</b>. By subtracting those two, we get a 1 as an answer.Now lets do the rest of the jobs.</li>
+                            <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (7 - 20 = 13), j4 = (14 - 5 = 9), j5 = (1 - 3 = 2)</b></li>
+                            <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
+                            <img class="fcfsavg" src="RR-AVG.png" alt="fcfsavg">
+                            <h4>Average turnaround time</h4>
+                            <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 66 divided by 5, which gives us 13.2</b>.</li>
+                            <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 36 divided by 5, which gives us 7.2 as the answer</b></li>
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
+              
+              
+                          </ul>
+                        </ul>                        
+                        </section>   
+                  </div>
+                </div>
+              </div>
+            </section>
+  
     </main>
 
-    <style>
-      h2 {
-        color: rgb(252, 0, 0);
-      }
-    </style>
-
-    <section class="container py-5" id="FCFS">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>First Come First Serve</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
-            <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>The first would be to solve for the completion time, and this can be done by using a gantt chart. With both the arrival time and the given time, we could use that for the gantt chart.</li>
-              <li>So using the arrival time of the processes, we have to process the one who came earlier, so it's going to be <b>J1</b> as it's the one who came first with the arrival time of 0.</li>
-              <li>Then we have to process the <b>J1</b> with its burst time of 8.</li>
-              <li>After we processed the first job, as you can see, we ended it at 8. Within those 8 came 2 jobs, which were <b>J3</b> and <b>J5</b>, which have a burst time of 7 and 4, respectively.</li>
-              <li>To know which one to process first in a queue of jobs in the <b> First Come First Serve Algorithm </b> we have to use the arrival time of the queued jobs.</li>
-              <li>In this case we would process the <b>J5</b> first because it arrived much earlier than the <b>J3</b>.</li>
-              <li>Then we would use all of the burst time of <b>J5</b>, and the process ended at 9, then another job arrived, which is the j4.</li>
-              <li>Using the same criteria we used earlier for multiple queued jobs, we would process the one who arrived first, which in this case is <b>J3</b>, which ended at 16. Inside those 16 then arrived another job, which is <b>J2</b>.</li>
-              <li>Then we'll use the criteria again, which in this case is <b>J4</b> because it arrived first than <b>j2</b>. After we processed <b>J4</b>, which ended at 21, no other job arrived, so we will process the remaining job, <b>J2</b>, which ended at 30.</li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 16 = 9), J4 = ( 9 - 21 = 12), J5 = (4 - 9 = 5)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="FCFS-AVG.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" id="SJF">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>Shortest Job First</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Job First (SJF) or Shortest Job Next (SJN) is a scheduling policy that prioritizes the process with the smallest execution time. This can be either preemptive or non-preemptive. It’s a Greedy Algorithm known for its minimal average waiting time among all scheduling algorithms. However, it may lead to starvation if shorter processes continually arrive, which can be mitigated using the concept of ageing. While it’s practically challenging to implement as the Operating System may not know burst times, several methods, like a weighted average of previous execution times, can estimate a job’s execution time. This makes SJF suitable for specialized environments where accurate running time estimates are available. The algorithm works by sorting all processes according to their arrival time, then selecting the process with the minimum arrival and burst time. After a process is completed, a pool of processes that arrive afterward is created, and the process with the minimum burst time is selected from this pool. </h5>
-            <img class = fcfspic src="shortest job first.png" alt="fcfspic">
-            <h5>So let's work on some examples for Shortest Job First from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>As we did in the first come, first serve algorithm, we would <b>create a Gantt chart based on the arrival and burst time of our jobs.</b></li>
-              <li>Although it's almost the same, it has a different way of doing its priority compared to the <b>first come, first serve</b>.</li>
-              <li><b>Shortest Job First uses burst time</b> to know which to process next if there are multiple jobs on the ram.</li>
-              <li>So with that in mind we can now create a gantt chart for our <b>Shortest Jobs First Algorithm</b>.</li>
-              <li>Back to the table, we can see that <b>J1 arrived first</b> and no other jobs are in the ram, so now we have to process j1 all the way.</li>
-              <li>Now that we have a <b>burst time of 8, J3 and J5 arrived.</b></li>
-              <li>And now we can use the criteria for <b>Shortest Job First</b>, which is that <b>when there are more than 1 process inside the ram</b>, the one who will be <b>processed first is the one with the lowest burst time.</b></li>
-              <li>In this case, based on the table above, <b>J5 has a lower burst time than J3, so J5 will be processed first.</b> After we processed that we were at 9 m/s,  another job arrived, which is the <b>J4</b>.</li>
-              <li>So by utilizing the criteria again, <b>we will process J4 first as it has a lower burst time than J3 in the queue</b> ending at 14 then comes <b>J2. Now we will process J3 as it has a lower burst time than j2</b>ending at 21, and lastly, we will now process <b>J2 and end at 30 m/s.</b></j2></li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 21 = 14), J4 = ( 9 - 14 = 5), J5 = (4 - 9 = 5)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (5 - 1 = 4)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="sjf avg.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 52 divided by 5, which gives us 10.4</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 22 divided by 5, which gives us 4.4 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" id="SRTF">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>Shortest Remaining Time First</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Remaining Time First (SRTF) is a preemptive version of the Shortest Job First (SJF) scheduling algorithm. Unlike SJF, which is non-preemptive and lets a process run to completion once started, SRTF can interrupt a running process if a new process with a shorter remaining time arrives. This leads to improved response times as shorter tasks get completed quickly. However, it also results in increased overhead due to frequent context switching and CPU time monitoring, unlike SJF which has less overhead but may not provide the best turnaround times for shorter tasks that arrive after a long task has started execution.</h5>
-            <img class = fcfspic src="SRTF-PIC.png" alt="fcfspic">
-            <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>To make a gantt chart for the <b>SRTF, or shortest remaining time first</b>, it's basically the same as shortest job first; the only difference is that this scheduling algorithm is preemptive, meaning it has to stop processing the job if another job arrives while processing.</li>
-              <li>Referring to the table above, we can see that <b>J1 arrived first,</b> so we will process it.</li>
-              <li>Now, while it is processing, we can now <b>use the rule for the shortest remaining time first algorithm</b>, and that is, when a job arrives, <b>the current job that is being processed will come to a halt.</b></li>
-              <li>So now <b>J1 will have to stop at time 4 because the job J5 arrived and we have to deduct the time used for J1 making its burst time 4</b>.Now that we have a queue, we would now have to look at the burst time to see which job to process first, much like Shortest Job First.</li>
-              <li><b>J5 has a lower burst time than J1, so we have to process it first</b>. Using all of its burst time, we would stop at time 5, in which only J1 is in the queue. So we have to process J1 until time 7, deduct the 2 from its current burst time making it 2, and then <b>another job arrives, which is J3</b>.</li>
-              <li>Again, we have multiple jobs in the queue, so we would have to check their burst time to see which is lower so that it can be processed first. In this case, it would be <b>J1 as it has only two burst time left</b> processing until time 9, at which time another job arrives, which is J4.</li>
-              <li>We would have to <b>process J4 first as it has a lower burst time than J3</b>, We would only consume 1 of its burst time as <b>another job arrives at time 10, which is J2.</b></li>
-              <li>Now that we have all the processes in the ram and there are no more jobs to arrive, we can now consume all of the burst time of the remaining jobs in the queue without stopping the process.</li>
-              <li>Using the criteria again, <b>we can check each of their burst times to know which to process</b>. First, we will have to process J4 and consume its remaining time, which is 4, ending its process at time 14. Next is J3, which has a burst time of 7, ending at time 21, and lastly, the remaining job, which is J2, with a burst time of 9, ending at time 30.</li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>  
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 9</b>. Using the formula for the <b>turnaround-time (0-9)</b>, the answer would be 9. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 21 = 14), J4 = ( 9 - 14 = 5), J5 = (4 - 5 = 1)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 9 and a burst time of 8</b>. By subtracting those two, we get a 1 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (14 - 7 = 7), j4 = (5 - 5 = 0), j5 = (1 - 1 = 0)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="SRTF-AVG.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 49 divided by 5, which gives us 9.8</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 19 divided by 5, which gives us 3.8 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" id="PRIO"> <!-- Issue on description -->
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>Priority(Preemptive)</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
-            <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>The first would be to solve for the completion time, and this can be done by using a gantt chart. With both the arrival time and the given time, we could use that for the gantt chart.</li>
-              <li>So using the arrival time of the processes, we have to process the one who came earlier, so it's going to be <b>J1</b> as it's the one who came first with the arrival time of 0.</li>
-              <li>Then we have to process the <b>J1</b> with its burst time of 8.</li>
-              <li>After we processed the first job, as you can see, we ended it at 8. Within those 8 came 2 jobs, which were <b>J3</b> and <b>J5</b>, which have a burst time of 7 and 4, respectively.</li>
-              <li>To know which one to process first in a queue of jobs in the <b> First Come First Serve Algorithm </b> we have to use the arrival time of the queued jobs.</li>
-              <li>In this case we would process the <b>J5</b> first because it arrived much earlier than the <b>J3</b>.</li>
-              <li>Then we would use all of the burst time of <b>J5</b>, and the process ended at 9, then another job arrived, which is the j4.</li>
-              <li>Using the same criteria we used earlier for multiple queued jobs, we would process the one who arrived first, which in this case is <b>J3</b>, which ended at 16. Inside those 16 then arrived another job, which is <b>J2</b>.</li>
-              <li>Then we'll use the criteria again, which in this case is <b>J4</b> because it arrived first than <b>j2</b>. After we processed <b>J4</b>, which ended at 21, no other job arrived, so we will process the remaining job, <b>J2</b>, which ended at 30.</li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 16 = 9), J4 = ( 9 - 21 = 12), J5 = (4 - 9 = 5)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" id="NON-PRIO"> <!-- Issue on description/ pictures-->
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>Priority(Non-Preemptive)</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">Priority scheduling is a non-preemptive algorithm commonly used in batch systems. It operates by assigning each process an arrival time and priority, with the first process scheduled being the one with the lowest arrival time. If multiple processes share the same arrival time, the one with the highest priority is scheduled first. If two processes have the same priority, the one with the lower process number is scheduled first. This process continues until all processes have been executed. It’s important to note that the priority number’s significance (whether a lower or higher number indicates a higher priority) will be clearly stated in the question. Once all processes have arrived, they can be scheduled based on their priority. This approach ensures efficient and fair process scheduling.</h5>
-            <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
-            <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>The first job to arrive at the queue is J1, so we have to process all of its burst time. That ends at time 8, and within that time, two jobs arrive at the queue, which are J5 and J3.</li>
-              <li>Now that we have multiple jobs in the queue, we will have to use the criteria for priority, which states that we have to process the one who has a higher priority than the others, with 1 being the highest priority.</li>
-              <li>So back to the example, we can see two jobs in the queue, J5 and J3. J5 has a priority number of 1, and J3 has the same priority number, 1. To break the tie between the two, we would look at the next criteria, which is the burst time. The lower the burst time, the higher the priority to be processed, the same as the Shortest Job First Scheduling Algorithm.</li>
-              <li>So in this case, we would process J5 first, as it has a lower burst time than J3. After we processed J5, we arrived at time 9, where another job arrived, which was J4.</li>
-              <li>Again, we have multiple jobs in the queue, so we would use the criteria for the priority scheduling algorithm to know which one to process first. As we can see in the table above, J3 has a priority number of 1 and J4 has a priority number of 4, so we would have to process J3 first as it has a higher priority value than J4, ending its burst time at time 16; another job arrived, which is J2.</li>
-              <li>J2 has a priority number of 2 and J4 has a priority number of 4, so we will have to process J2 first, ending its burst time at time 25, and finally processing the final job in the queue, which is J4, ending its burst time at time 30.</li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 25 = 15), J3 = (7 - 16 = 9), J4 = ( 9 - 30 = 21), J5 = (4 - 9 = 5)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (15 - 9 = 6)</b><b>J3 = (9 - 7 = 2), j4 = (21 - 5 = 16), j5 = (5 - 1 = 4)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="PRIO-AVG.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 58 divided by 5, which gives us 11.6</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 28 divided by 5, which gives us 5.6 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container py-5" id="RR"> <!-- Issue on description/ pictures-->
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
-          <h2>Round Robin</h2>  
-          <h5 class="text-secondary fw-normal py-2 Lucida Console">The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
-            <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
-            <h5>So let's work on some examples from the given picture above and break it down bit by bit.</h5>
-            <ul class="steps">
-              <h2>Gantt Chart</h2>
-              <li>The first would be to solve for the completion time, and this can be done by using a gantt chart. With both the arrival time and the given time, we could use that for the gantt chart.</li>
-              <li>So using the arrival time of the processes, we have to process the one who came earlier, so it's going to be <b>J1</b> as it's the one who came first with the arrival time of 0.</li>
-              <li>Then we have to process the <b>J1</b> with its burst time of 8.</li>
-              <li>After we processed the first job, as you can see, we ended it at 8. Within those 8 came 2 jobs, which were <b>J3</b> and <b>J5</b>, which have a burst time of 7 and 4, respectively.</li>
-              <li>To know which one to process first in a queue of jobs in the <b> First Come First Serve Algorithm </b> we have to use the arrival time of the queued jobs.</li>
-              <li>In this case we would process the <b>J5</b> first because it arrived much earlier than the <b>J3</b>.</li>
-              <li>Then we would use all of the burst time of <b>J5</b>, and the process ended at 9, then another job arrived, which is the j4.</li>
-              <li>Using the same criteria we used earlier for multiple queued jobs, we would process the one who arrived first, which in this case is <b>J3</b>, which ended at 16. Inside those 16 then arrived another job, which is <b>J2</b>.</li>
-              <li>Then we'll use the criteria again, which in this case is <b>J4</b> because it arrived first than <b>j2</b>. After we processed <b>J4</b>, which ended at 21, no other job arrived, so we will process the remaining job, <b>J2</b>, which ended at 30.</li>
-              <h2>Turnaround Time and Waiting Time</h2>
-              <h4>Turnaround-Time</h4>
-              <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
-              <li>First would be the <b>turnaround time</b>, which we can solve by subtracting the <b>completion time</b> of the job from its <b>arrival time</b>.</li>
-              <li>Now that we know the equation for the turnaround time, we can now calculate the turnaround time for each job.</li>
-              <li>So we have <b>J1</b>, which has an <b>arrival time of 0</b> and a <b>completion time of 8</b>. Using the formula for the <b>turnaround-time (0-8)</b>, the answer would be 8. Now do the same for the others. <b>J2 = (10 - 30 = 20), J3 = (7 - 16 = 9), J4 = ( 9 - 21 = 12), J5 = (4 - 9 = 5)</b>.</li>
-              <li>Now that we got the <b>turnaround-time</b> of all of the jobs we can now calculate the waiting time of each job. This is done by subtracting the <b>turnaround-time and the burst time</b> of each jobs</li>
-              <h4>Waiting Time</h4>
-              <li>With that, let's calculate the <b>waiting time</b> for each job.</li>
-              <li>For <b>J1</b>, we can see that it has a <b>turnaround time of 8 and a burst time of 8</b>. By subtracting those two, we get a 0 as an answer.Now lets do the rest of the jobs.</li>
-              <li>For <b>J2</b>,it has a <b>turnaround time of 20</b> and a <b>burst time of 9 </b>so <b>J2 = (20 - 9 = 11)</b><b>J3 = (9 - 7 = 2), j4 = (12 - 5 = 7), j5 = (5 - 1 =4)</b></li>
-              <h2>Average turnaround time, average waiting time, CPU Utilization</h2>
-              <img class="fcfsavg" src="FCFS-PIC.png" alt="fcfsavg">
-              <h4>Average turnaround time</h4>
-              <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 54 divided by 5, which gives us 10.8</b>.</li>
-              <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
-              <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
     <script src="tutorial.js"></script>
-     <!-- Footer -->
-     
-     <!-- Bootstrap script link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
