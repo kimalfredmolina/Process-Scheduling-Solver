@@ -21,11 +21,12 @@
   background: #11101d;
   padding: 15px;
   z-index: 999;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, padding 0.3s ease;
 }
 
 .sidebar.close {
   width: 0;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -266,10 +267,21 @@
     width: 200px;
   }
 
+  .sidebar.close {
+    width: 0;
+    padding: 0;
+  }
+
   .navbar,
   .main {
     left: 200px;
     width: calc(100% - 200px);
+  }
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
   }
 
   .sidebar a {
@@ -296,10 +308,21 @@
     width: 160px;
   }
 
+  .sidebar.close {
+    width: 0;
+    padding: 0;
+  }
+
   .navbar,
   .main {
     left: 160px;
     width: calc(100% - 160px);
+  }
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
   }
 
   .sidebar a {
@@ -343,10 +366,21 @@
     width: 140px;
   }
 
+  .sidebar.close {
+    width: 0;
+    padding: 0;
+  }
+
   .navbar,
   .main {
     left: 140px;
     width: calc(100% - 140px);
+  }
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
   }
 
   .sidebar a {
