@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CPU Scheduling Tutorial</title>
+    <link rel="icon" type="image/png" href="logoa.png">
     <link rel="stylesheet" href="tutorial.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
   </head>
@@ -52,6 +53,12 @@
               <i class="fa-solid fa-chevron-left"></i>
               Tutorial
             </div>
+            <style>
+              .submenu-item {
+                color: rgb(252, 0, 0);
+                font-size: bold;
+              } 
+            </style>
             <li class="item">
               <a href="fcfs.html">First Come First Serve</a>
             </li>
@@ -108,6 +115,7 @@
                 <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
                   <br>
                   <br>
+                  <br>
                   <h2>First Come First Serve</h2>  
                   <h5>The simplest CPU scheduling algorithm, FCFS (First Come, First Serve), prioritizes processes based on their arrival times, utilizing a FIFO queue. As processes enter the ready queue, their PCBs are appended to the queue's tail. When the CPU becomes available, the process at the head of the queue is allocated the CPU and subsequently removed from the queue. FCFS can be either preemptive or non-preemptive, executing tasks in the order they arrive. While easy to implement, FCFS may result in high wait times and is less efficient, making it better suited for batch systems where longer process durations are tolerable.</h5>
                     <img class = fcfspic src="FCFS-PIC.png" alt="fcfspic">
@@ -146,6 +154,9 @@
                   <section class="container py-5" id="SJF">
                     <div class="row mt-4 py-3">
                       <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <br>
+                        <br>
+                        <br>
                         <h2>Shortest Job First</h2>  
                         <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Job First (SJF) or Shortest Job Next (SJN) is a scheduling policy that prioritizes the process with the smallest execution time. This can be either preemptive or non-preemptive. It’s a Greedy Algorithm known for its minimal average waiting time among all scheduling algorithms. However, it may lead to starvation if shorter processes continually arrive, which can be mitigated using the concept of ageing. While it’s practically challenging to implement as the Operating System may not know burst times, several methods, like a weighted average of previous execution times, can estimate a job’s execution time. This makes SJF suitable for specialized environments where accurate running time estimates are available. The algorithm works by sorting all processes according to their arrival time, then selecting the process with the minimum arrival and burst time. After a process is completed, a pool of processes that arrive afterward is created, and the process with the minimum burst time is selected from this pool. </h5>
                           <img class = fcfspic src="shortest job first.png" alt="fcfspic">
@@ -184,6 +195,9 @@
                   <section class="container py-5" id="SRTF">
                     <div class="row mt-4 py-3">
                       <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <br>
+                        <br>
+                        <br>
                         <h2>Shortest Remaining Time First</h2>  
                         <h5 class="text-secondary fw-normal py-2 Lucida Console">The Shortest Remaining Time First (SRTF) is a preemptive version of the Shortest Job First (SJF) scheduling algorithm. Unlike SJF, which is non-preemptive and lets a process run to completion once started, SRTF can interrupt a running process if a new process with a shorter remaining time arrives. This leads to improved response times as shorter tasks get completed quickly. However, it also results in increased overhead due to frequent context switching and CPU time monitoring, unlike SJF which has less overhead but may not provide the best turnaround times for shorter tasks that arrive after a long task has started execution.</h5>
                           <img class = fcfspic src="SRTF-PIC.png" alt="fcfspic">
@@ -222,6 +236,9 @@
                   <section class="container py-5" id="PRIO">
                     <div class="row mt-4 py-3">
                       <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <br>
+                        <br>
+                        <br>
                         <h2>Priority(Preemptive)</h2>  
                         <h5 class="text-secondary fw-normal py-2 Lucida Console">The Preemptive Priority CPU Scheduling Algorithm is a method that prioritizes tasks based on their   rank, with lower-ranking processes having higher priority. In the event of a conflict where multiple processes have the same priority, it defaults to a First Come, First Serve (FCFS) approach. The algorithm begins by selecting the first process with an arrival time of zero. It then checks the priority of the next available process, executing the one with a higher priority. If the priorities are equal, it executes the process that arrived first. This process is repeated until all processes have been executed, always choosing the highest priority process at each step. This ensures that tasks are executed efficiently and in order of their importance.
                           <br>
@@ -263,6 +280,9 @@
                   <section class="container py-5" id="NON-PRIO">
                     <div class="row mt-4 py-3">
                       <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <br>
+                        <br>
+                        <br>
                         <h2>Priority(Non-Preemptive)</h2>  
                         <h5 class="text-secondary fw-normal py-2 Lucida Console">Priority scheduling is a non-preemptive algorithm commonly used in batch systems. It operates by assigning each process an arrival time and priority, with the first process scheduled being the one with the lowest arrival time. If multiple processes share the same arrival time, the one with the highest priority is scheduled first. If two processes have the same priority, the one with the lower process number is scheduled first. This process continues until all processes have been executed. It’s important to note that the priority number’s significance (whether a lower or higher number indicates a higher priority) will be clearly stated in the question. Once all processes have arrived, they can be scheduled based on their priority. This approach ensures efficient and fair process scheduling.</h5>
                           <img class = fcfspic src="PRIO-PIC.png" alt="fcfspic">
@@ -298,6 +318,9 @@
                   <section class="container py-5" id="RR">
                     <div class="row mt-4 py-3">
                       <div class="col-12 d-flex flex-column text-right justify-content-right" id="paragraph">
+                        <br>
+                        <br>
+                        <br>
                         <h2>Round Robin</h2>  
                         <h5 class="text-secondary fw-normal py-2 Lucida Console">The Round Robin CPU scheduling algorithm is a preemptive version of the First Come First Serve algorithm, where each process is assigned a fixed time slot in a cyclical manner. This algorithm, which focuses on time-sharing techniques, allows each process in the ready queue to be assigned the CPU for a specific time quantum. If a process completes its execution within this time, it ends; otherwise, it returns to the waiting table for its next turn. The Round Robin algorithm is simple, easy to implement, and starvation-free, ensuring fairness as each process gets an equal share of the CPU. However, it has the disadvantage of increased context switching overhead, larger waiting and response times, low throughput, and potentially large Gantt charts if the quantum time is small. Despite these drawbacks, it remains one of the most commonly used techniques in CPU scheduling.</h5>
                           <img class = fcfspic src="RR-PIC.png" alt="fcfspic">

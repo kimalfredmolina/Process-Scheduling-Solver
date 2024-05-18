@@ -1,32 +1,51 @@
 /* Import Google font - Poppins */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 :root {
   --white-color: #fff;
   --bg-color: #fff;
   --gray-color: #ccc;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .sidebar {
   position: fixed;
   height: 100%;
   width: 260px;
   background: #11101d;
   padding: 15px;
-  z-index: 99;
+  z-index: 999;
+  transition: width 0.3s ease, padding 0.3s ease;
 }
+
+.sidebar.close {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .logo {
   font-size: 25px;
   padding: 0 15px;
 }
+
 .sidebar a {
   color: #fff;
   text-decoration: none;
+  pointer-events: auto;
+  display: block;
+  padding: 10px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .menu-content {
   position: relative;
   height: 100%;
@@ -34,38 +53,47 @@
   margin-top: 40px;
   overflow-y: scroll;
 }
+
 .menu-content::-webkit-scrollbar {
   display: none;
 }
+
 .menu-items {
   height: 100%;
   width: 100%;
   list-style: none;
   transition: all 0.4s ease;
 }
+
 .submenu-active .menu-items {
   transform: translateX(-56%);
 }
+
 .menu-title {
   color: #fff;
   font-size: 14px;
   padding: 15px 20px;
 }
+
 .item a,
 .submenu-item {
   padding: 16px;
   display: inline-block;
   width: 100%;
   border-radius: 12px;
+  pointer-events: auto;
 }
+
 .item i {
   font-size: 12px;
 }
+
 .item a:hover,
 .submenu-item:hover,
 .submenu .menu-title:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+
 .submenu-item {
   display: flex;
   justify-content: space-between;
@@ -73,6 +101,7 @@
   color: #fff;
   cursor: pointer;
 }
+
 .submenu {
   position: absolute;
   height: 100%;
@@ -83,16 +112,20 @@
   background: #11101d;
   display: none;
 }
+
 .show-submenu ~ .submenu {
   display: block;
 }
+
 .submenu .menu-title {
   border-radius: 12px;
   cursor: pointer;
 }
+
 .submenu .menu-title i {
   margin-right: 10px;
 }
+
 .navbar,
 .main {
   left: 260px;
@@ -100,11 +133,13 @@
   transition: all 0.5s ease;
   z-index: 1000;
 }
+
 .sidebar.close ~ .navbar,
 .sidebar.close ~ .main {
   left: 0;
   width: 100%;
 }
+
 .navbar {
   position: fixed;
   color: #ac0505;
@@ -113,9 +148,11 @@
   background: rgba(64, 112, 244, 0);
   cursor: pointer;
 }
+
 .navbar #sidebar-close {
   cursor: pointer;
 }
+
 .main {
   position: relative;
   display: flex;
@@ -127,97 +164,257 @@
   z-index: 100;
   background: #e7f2fd;
 }
+
 .main h1 {
   color: #11101d;
   font-size: 40px;
   text-align: center;
 }
 
+/*----------------IMAGES--------------- */
+.cpu {
+  max-width: 60%;
+  height: auto;
+  border: 4px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
 
-  /*----------------IMAGES--------------- */
+.fcfspic {
+  max-width: 50%;
+  height: auto;
+  border: 4px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.fcfsavg {
+  max-width: 50%;
+  height: auto;
+  border: 4px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+/*------------------TEXTS----------------*/
+.wrappper {
+  margin-top: 100%;
+  margin: 150px;
+  max-width: 70%;
+}
+
+.cpu-text {
+  color: black;
+  margin-top: 50%;
+  margin: 150px;
+  max-width: 70%;
+}
+
+.cpu-text h1 {
+  font-size: 50px;
+  margin-bottom: 25px;
+  font-family: 'Monaco', monospace;
+}
+
+.cpu-text p {
+  font-size: 20px;
+  font-family: 'Monaco', monospace;
+}
+
+.cpu-text h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-family: 'Monaco', monospace;
+}
+
+.cpu-text h5 {
+  font-size: 17px;
+  font-family: 'Monaco', monospace;
+  padding-bottom: 15px;
+}
+
+.cpu-text h4 {
+  font-size: 30px;
+  font-family: 'Monaco', monospace;
+}
+
+#paragraph {
+  font-family: 'Monaco', monospace;
+}
+
+.steps {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.close {
+    width: 0;
+    padding: 0;
+  }
+
+  .navbar,
+  .main {
+    left: 200px;
+    width: calc(100% - 200px);
+  }
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
+  }
+
+  .sidebar a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .main h1 {
+    font-size: 30px;
+  }
+
   .cpu {
-    max-width: 60%; 
-      height: auto; 
-      border: 4px solid black;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
-    }
+    max-width: 80%;
+  }
 
-    .fcfspic {
-      max-width: 50%; 
-      height: auto; 
-      border: 4px solid black;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
-    }
+  .fcfspic,
+  .fcfsavg {
+    max-width: 80%;
+  }
+}
 
-    .fcfsavg{
-      max-width: 50%; 
-      height: auto; 
-      border: 4px solid black;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 20px;
-    }
-    /*------------------TEXTS----------------*/
-  .wrappper {
-    margin-top: 100%;
-    margin: 150px;
-    max-width: 70%;
+@media (max-width: 576px) {
+  .sidebar {
+    width: 160px;
   }
-  .cpu-text{
-    color: black;
-    margin-top: 50%;
-    margin: 150px;
-    max-width: 70%;
+
+  .sidebar.close {
+    width: 0;
+    padding: 0;
   }
-  .cpu-text h1{
-    font-size: 50px;
-    margin-bottom: 25px;
-    font-family: 'Monaco', monospace;
+
+  .navbar,
+  .main {
+    left: 160px;
+    width: calc(100% - 160px);
   }
-  .cpu-text p {
-    font-size: 20px;
-    font-family: 'Monaco', monospace;
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
+  }
+
+  .sidebar a {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .main h1 {
+    font-size: 25px;
+  }
+
+  .cpu {
+    max-width: 90%;
+  }
+
+  .fcfspic,
+  .fcfsavg {
+    max-width: 90%;
+  }
+
+  .cpu-text h1 {
+    font-size: 40px;
   }
 
   .cpu-text h2 {
-    font-size: 30px;
-    margin-bottom: 25px;
-    font-family: 'Monaco', monospace;
+    font-size: 25px;
   }
 
+  .cpu-text h4,
   .cpu-text h5 {
-    font-size: 17px;
-    font-family: 'Monaco', monospace;
-    padding-bottom: 15px;
+    font-size: 20px;
   }
 
-  .cpu-text h4 {
+  .steps {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .sidebar {
+    width: 140px;
+  }
+
+  .sidebar.close {
+    width: 0;
+    padding: 0;
+  }
+
+  .navbar,
+  .main {
+    left: 140px;
+    width: calc(100% - 140px);
+  }
+
+  .sidebar.close ~ .navbar,
+  .sidebar.close ~ .main {
+    left: 0;
+    width: 100%;
+  }
+
+  .sidebar a {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .main h1 {
+    font-size: 20px;
+  }
+
+  .cpu {
+    max-width: 100%;
+  }
+
+  .fcfspic,
+  .fcfsavg {
+    max-width: 100%;
+  }
+
+  .cpu-text h1 {
     font-size: 30px;
-    font-family: 'Monaco', monospace;
   }
 
-  #paragraph {
-    font-family: 'Monaco', monospace;
+  .cpu-text h2 {
+    font-size: 20px;
   }
-  .steps{
-    font-size: 17px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 30px;
-    padding-left: 40px;
+
+  .cpu-text h4,
+  .cpu-text h5 {
+    font-size: 18px;
   }
-  
-  
+
+  .steps {
+    font-size: 13px;
+  }
+}
