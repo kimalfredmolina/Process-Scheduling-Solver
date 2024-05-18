@@ -12,7 +12,10 @@
   <body>
     <nav class="sidebar">
       <a href="index.html" class="logo">Home</a>
-
+      <br>
+      <a href="fcfs.html" class="logo">Process <br> Calculator</a>
+      <br>
+      <br>
       <div class="menu-content">
         <ul class="menu-items">
 
@@ -42,9 +45,9 @@
 
           <li class="item">
             <a href="#RR">Round-Robin</a>
-          </li>
+          </li>         
 
-          <div class="submenu-item">
+          <!--<div class="submenu-item">
             <span>Process Calculator</span>
             <i class="fa-solid fa-chevron-right"></i>
           </div>
@@ -83,7 +86,7 @@
               <a href="rr.html">Round Robin</a>
             </li>
           </ul>
-        </li>
+        </li> -->
 
         </ul>
       </div>
@@ -100,6 +103,28 @@
           color: rgb(252, 0, 0);
         }
       </style>
+      <style>
+        .custom-button {
+            background-color: #4CAF50;
+            border: none; 
+            color: white; 
+            padding: 15px 32px; 
+            text-align: center; 
+            text-decoration: none; 
+            display: inline-block; 
+            font-size: 16px; 
+            margin: 4px 2px; 
+            cursor: pointer; 
+            border-radius: 12px; 
+            transition-duration: 0.4s; 
+        }
+
+        .custom-button:hover {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #4CAF50;
+        }
+    </style>
       <section class="container py-5" id="CPU">
         <div class="container">
           <div class="wrapper">
@@ -149,6 +174,7 @@
                       <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 24 divided by 5, which gives us 4.8 as the answer</b></li>
                       <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
                     </ul>
+                    <a href="fcfs.html" class="custom-button">FCFS Calculator</a>
                   </section>
 
                   <section class="container py-5" id="SJF">
@@ -190,6 +216,7 @@
                             <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 22 divided by 5, which gives us 4.4 as the answer</b></li>
                             <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
                           </ul>
+                          <a href="sjf.html" class="custom-button">SJF Calculator</a>
                   </section>
               
                   <section class="container py-5" id="SRTF">
@@ -231,6 +258,7 @@
                             <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 19 divided by 5, which gives us 3.8 as the answer</b></li>
                             <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
                           </ul>
+                          <a href="srtf.html" class="custom-button">SRTF Calculator</a>
                   </section>                          
               
                   <section class="container py-5" id="PRIO">
@@ -275,6 +303,7 @@
                             <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 37 divided by 5, which gives us 7.4 as the answer</b></li>
                             <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
                           </ul>
+                          <a href="Prio p.html" class="custom-button">Prio P Calculator</a>
                   </section>
                   
                   <section class="container py-5" id="NON-PRIO">
@@ -313,6 +342,7 @@
                             <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 28 divided by 5, which gives us 5.6 as the answer</b></li>
                             <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>              
                           </ul>
+                          <a href="Prio np.html" class="custom-button">Prio NP Calculator</a>
                   </section>
 
                   <section class="container py-5" id="RR">
@@ -340,7 +370,6 @@
                             <li>We then process <b>J2</b> for 3 units. It ends at time 27 with a remaining burst time of 3.</li>
                             <li>Next, we process <b>J3</b> for 1 unit. It ends at time 28 and is now complete.</li>
                             <li>Finally, we process <b>J2</b> for 3 units. It ends at time 31 and is now complete.</li>
-
                             <h2>Turnaround Time and Waiting Time</h2>
                             <h4>Turnaround-Time</h4>
                             <li>Now that our Gantt chart is done, we can now solve the remaining parts of the table, which are the <b>turnaround time and waiting time.</b></li>
@@ -357,11 +386,10 @@
                             <h4>Average turnaround time</h4>
                             <li>The calculations for the <b>Average turnaround time</b> are as follows: get the summation of <b>turnaround time</b> and divide the sum by how many items are there. In this case, the summation of <b>turnaround time is 66 divided by 5, which gives us 13.2</b>.</li>
                             <li>Next is the <b>average waiting time</b>. It's just as simple: we're going to do the same thing as we did for the average turnaround time. so it will be the summation of <b>Waiting time 36 divided by 5, which gives us 7.2 as the answer</b></li>
-                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>
-              
-              
+                            <li>Now for the CPU utilization. In this one, we are going to need the sum of our burst time, divide it by our total completion time, and multiply it by 100. So in this case, the <b>summation of burst time is 30; divide it by our end time, which is 30; then multiply by 100</b>, we get a total of <b>100% CPU-Utilization</b>.</li>          
                           </ul>
-                        </ul>                        
+                        </ul>     
+                        <a href="rr.html" class="custom-button">RR Calculator</a>                   
                         </section>   
                   </div>
                 </div>
