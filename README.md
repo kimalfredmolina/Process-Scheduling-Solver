@@ -37,4 +37,4 @@ Have suggestions or feedback? We'd love to hear from you! Reach out to us via ki
 - [Ken Villaruel](https://github.com/chikening)
 - [Fritz Catalan](https://github.com/Yoznov)
 - [Laurence Deocareza](https://www.facebook.com/laurence.deocareza.3)
-- [Justin Morales](https://www.facebook.com/justin.morales.77377)
+- [Justin Morales](https://github.com/Astinn20)
